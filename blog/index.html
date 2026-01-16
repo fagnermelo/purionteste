@@ -305,6 +305,25 @@
     }
 
 
+
+    /* Anti-hifenização (global) — manter palavras inteiras */
+    h1, h2, h3, .display, .title{
+      hyphens: none !important;
+      -webkit-hyphens: none !important;
+      -ms-hyphens: none !important;
+      overflow-wrap: normal !important;
+      word-break: keep-all !important;
+    }
+    /* Garantia extra (título "Qualidade") */
+    #qualidade h2, #qualidade .split-title h2{
+      hyphens: none !important;
+      -webkit-hyphens: none !important;
+      overflow-wrap: normal !important;
+      word-break: keep-all !important;
+      white-space: normal !important;
+    }
+
+
     /* HERO */
     .hero{padding-top: clamp(2.0rem, 3vw, 3.0rem); overflow:hidden;}
     .hero-grid{display:grid; grid-template-columns:repeat(12, minmax(0,1fr)); gap:var(--gap2); align-items:start;}
@@ -590,15 +609,15 @@
 
 <header>
   <nav class="container nav" aria-label="Navegação principal">
-    <a class="brand" href="/" aria-label="Purion, início">PURION</a>
+    <a class="brand" href="../" aria-label="Purion, início">PURION</a>
 
     <ul class="nav-links" aria-label="Links principais">
-      <li><a href="/#conceito">Conceito</a></li>
-      <li><a href="/#pureza">Pureza</a></li>
-      <li><a href="/#quem">Quem somos</a></li>
-      <li><a href="/#servicos">Serviços</a></li>
-      <li><a href="/blog/">Blog</a></li>
-      <li><a href="/#contactos">Contactos</a></li>
+      <li><a href="../#conceito">Conceito</a></li>
+      <li><a href="../#pureza">Pureza</a></li>
+      <li><a href="../#quem">Quem somos</a></li>
+      <li><a href="../#servicos">Serviços</a></li>
+      <li><a href="./">Blog</a></li>
+      <li><a href="../#contactos">Contactos</a></li>
     </ul>
 
     <button class="menu-btn" type="button" aria-label="Abrir menu" aria-controls="drawer" aria-expanded="false">
@@ -610,19 +629,19 @@
 
 <div class="drawer-scrim" data-close aria-hidden="true"></div>
 <aside id="drawer" class="drawer" aria-label="Menu mobile">
-  <a href="/#conceito" data-close>Conceito</a>
-  <a href="/#pureza" data-close>Pureza</a>
-  <a href="/#quem" data-close>Quem somos</a>
-  <a href="/#servicos" data-close>Serviços</a>
-  <a href="/blog/" data-close>Blog</a>
-  <a href="/#contactos" data-close>Contactos</a>
+  <a href="../#conceito" data-close>Conceito</a>
+  <a href="../#pureza" data-close>Pureza</a>
+  <a href="../#quem" data-close>Quem somos</a>
+  <a href="../#servicos" data-close>Serviços</a>
+  <a href="./" data-close>Blog</a>
+  <a href="../#contactos" data-close>Contactos</a>
 </aside>
 
 <main id="conteudo">
   <section class="page-hero" aria-label="Blog Purion">
     <div class="container stack">
       <div class="crumbs" aria-label="Breadcrumbs">
-        <a href="/">Início</a> <span aria-hidden="true">/</span> <span>Blog</span>
+        <a href="../">Início</a> <span aria-hidden="true">/</span> <span>Blog</span>
       </div>
       <div class="stack tight">
         <div class="eyebrow">Blog</div>
@@ -656,14 +675,14 @@
           <div class="meta"><span>Método</span><time datetime="2026-01-16">2026-01-16</time></div>
           <h3>O padrão invisível: controlo de qualidade em limpeza corporativa</h3>
           <p class="muted">Como checklists, supervisão e métricas mantêm consistência sem interferir na operação.</p>
-          <a class="read" href="/blog/padrao-invisivel-controle-de-qualidade.html">Ler artigo</a>
+          <a class="read" href="padrao-invisivel-controle-de-qualidade.html">Ler artigo</a>
         </article>
 
         <article class="card stack post" aria-label="Limpeza premium na prática: o que muda (de verdade)">
           <div class="meta"><span>Execução</span><time datetime="2026-01-16">2026-01-16</time></div>
           <h3>Limpeza premium na prática: o que muda (de verdade)</h3>
           <p class="muted">Menos adjetivos, mais processo: o que diferencia execução premium de “limpeza comum”.</p>
-          <a class="read" href="/blog/limpeza-premium-na-pratica.html">Ler artigo</a>
+          <a class="read" href="limpeza-premium-na-pratica.html">Ler artigo</a>
         </article>
       </div>
     </div>
@@ -733,7 +752,10 @@
   })();
   </script>
 
-  // Parallax “real” (suave) — funciona em desktop e mobile (iOS incluído)
+  
+
+<script>
+// Parallax “real” (suave) — funciona em desktop e mobile (iOS incluído)
   (() => {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
@@ -774,6 +796,6 @@
     window.addEventListener('resize', onScroll);
     onScroll();
   })();
-
+</script>
 </body>
 </html>
