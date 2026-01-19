@@ -531,6 +531,14 @@
       .glass-slice .img-slot, .photo-slot::before{ transform:none !important; }
     }
 
+
+    .post-card{display:flex; gap:1rem; align-items:stretch;}
+    .post-thumb{width:140px; min-width:140px; aspect-ratio:16/10; border-radius:16px; overflow:hidden; border:1px solid var(--hair); background:color-mix(in oklab, var(--bg) 86%, transparent);}
+    .post-thumb img{width:100%; height:100%; object-fit:cover; display:block;}
+    @media (max-width:700px){.post-thumb{width:100%; min-width:0;} .post-card{flex-direction:column;}}
+  
+    .post-card .thumb{width:100%; aspect-ratio:16/9; object-fit:cover; border-radius:var(--r2); border:1px solid var(--hair);}
+    .post-card h3{margin-top:.2rem}
 </style>
 
   <script type="application/ld+json">
@@ -725,56 +733,88 @@
       -->
       <div class="posts" role="list" aria-live="polite">
 
-        <article class="card stack post" role="listitem" aria-label="Turnover em hotelaria: como manter consistência sem aumentar custos">
+        <article class="card stack post post-card" role="listitem" aria-label="Turnover em hotelaria: como manter consistência sem aumentar custos">
+          <picture class="thumb">
+            <source type="image/webp" srcset="assets/post-images/turnover-hotelaria-consistencia.webp">
+            <img class="thumb" src="assets/post-images/turnover-hotelaria-consistencia.jpg" alt="Imagem do artigo" loading="lazy" decoding="async">
+          </picture>
           <div class="meta"><span>Hotelaria</span><time datetime="2026-01-19">19 jan 2026</time></div>
           <h3>Turnover em hotelaria: como manter consistência sem aumentar custos</h3>
           <p class="muted">Processos, rotinas e auditoria rápida para manter padrão em equipas rotativas.</p>
           <a class="read" href="turnover-hotelaria-consistencia.html">Ler artigo</a>
         </article>
 
-        <article class="card stack post" role="listitem" aria-label="Produtos e materiais: o que usar (e evitar) em hotelaria e alojamento local">
+        <article class="card stack post post-card" role="listitem" aria-label="Produtos e materiais: o que usar (e evitar) em hotelaria e alojamento local">
+          <picture class="thumb">
+            <source type="image/webp" srcset="assets/post-images/produtos-seguros-hotelaria-al.webp">
+            <img class="thumb" src="assets/post-images/produtos-seguros-hotelaria-al.jpg" alt="Imagem do artigo" loading="lazy" decoding="async">
+          </picture>
           <div class="meta"><span>Materiais</span><time datetime="2026-01-19">19 jan 2026</time></div>
           <h3>Produtos e materiais: o que usar (e evitar) em hotelaria e alojamento local</h3>
           <p class="muted">Como escolher produtos por superfície e evitar danos, odores fortes e marcas.</p>
           <a class="read" href="produtos-seguros-hotelaria-al.html">Ler artigo</a>
         </article>
 
-        <article class="card stack post" role="listitem" aria-label="Housekeeping premium: SOPs e auditoria que o hóspede não vê">
+        <article class="card stack post post-card" role="listitem" aria-label="Housekeeping premium: SOPs e auditoria que o hóspede não vê">
+          <picture class="thumb">
+            <source type="image/webp" srcset="assets/post-images/housekeeping-premium-sops.webp">
+            <img class="thumb" src="assets/post-images/housekeeping-premium-sops.jpg" alt="Imagem do artigo" loading="lazy" decoding="async">
+          </picture>
           <div class="meta"><span>Hotelaria</span><time datetime="2026-01-19">19 jan 2026</time></div>
           <h3>Housekeeping premium: SOPs e auditoria que o hóspede não vê</h3>
           <p class="muted">Como criar rotinas invisíveis para o hóspede e inevitáveis para o resultado.</p>
           <a class="read" href="housekeeping-premium-sops.html">Ler artigo</a>
         </article>
 
-        <article class="card stack post" role="listitem" aria-label="Higienização profissional entre hóspedes: padrão de hotelaria no AL">
+        <article class="card stack post post-card" role="listitem" aria-label="Higienização profissional entre hóspedes: padrão de hotelaria no AL">
+          <picture class="thumb">
+            <source type="image/webp" srcset="assets/post-images/higienizacao-entre-hospedes.webp">
+            <img class="thumb" src="assets/post-images/higienizacao-entre-hospedes.jpg" alt="Imagem do artigo" loading="lazy" decoding="async">
+          </picture>
           <div class="meta"><span>Alojamento Local</span><time datetime="2026-01-19">19 jan 2026</time></div>
           <h3>Higienização profissional entre hóspedes: padrão de hotelaria no AL</h3>
           <p class="muted">Como elevar o padrão entre reservas: ordem de trabalho, materiais e controlo final.</p>
           <a class="read" href="higienizacao-entre-hospedes.html">Ler artigo</a>
         </article>
 
-        <article class="card stack post" role="listitem" aria-label="Airbnb e AL: checklist de limpeza para garantir 5 estrelas">
+        <article class="card stack post post-card" role="listitem" aria-label="Airbnb e AL: checklist de limpeza para garantir 5 estrelas">
+          <picture class="thumb">
+            <source type="image/webp" srcset="assets/post-images/checklist-airbnb-5-estrelas.webp">
+            <img class="thumb" src="assets/post-images/checklist-airbnb-5-estrelas.jpg" alt="Imagem do artigo" loading="lazy" decoding="async">
+          </picture>
           <div class="meta"><span>Alojamento Local</span><time datetime="2026-01-19">19 jan 2026</time></div>
           <h3>Airbnb e AL: checklist de limpeza para garantir 5 estrelas</h3>
           <p class="muted">Um checklist prático (turnover) para reduzir reclamações e aumentar a consistência entre hóspedes.</p>
           <a class="read" href="checklist-airbnb-5-estrelas.html">Ler artigo</a>
         </article>
 
-        <article class="card stack post" role="listitem" aria-label="12 pontos de contacto que geram queixas — e como prevenir">
+        <article class="card stack post post-card" role="listitem" aria-label="12 pontos de contacto que geram queixas — e como prevenir">
+          <picture class="thumb">
+            <source type="image/webp" srcset="assets/post-images/pontos-de-contacto-queixas-limpeza.webp">
+            <img class="thumb" src="assets/post-images/pontos-de-contacto-queixas-limpeza.jpg" alt="Imagem do artigo" loading="lazy" decoding="async">
+          </picture>
           <div class="meta"><span>Alojamento Local</span><time datetime="2026-01-19">19 jan 2026</time></div>
           <h3>12 pontos de contacto que geram queixas — e como prevenir</h3>
           <p class="muted">Onde as reclamações de limpeza nascem (quase sempre): pontos de contacto. Um guia prático para reduzir queixas e elevar avaliações.</p>
           <a class="read" href="pontos-de-contacto-queixas-limpeza.html">Ler artigo</a>
         </article>
 
-        <article class="card stack post" role="listitem" aria-label="Limpeza premium na prática: o que muda (de verdade)">
+        <article class="card stack post post-card" role="listitem" aria-label="Limpeza premium na prática: o que muda (de verdade)">
+          <picture class="thumb">
+            <source type="image/webp" srcset="assets/post-images/limpeza-premium-na-pratica.webp">
+            <img class="thumb" src="assets/post-images/limpeza-premium-na-pratica.jpg" alt="Imagem do artigo" loading="lazy" decoding="async">
+          </picture>
           <div class="meta"><span>Execução</span><time datetime="2026-01-18">18 jan 2026</time></div>
           <h3>Limpeza premium na prática: o que muda (de verdade)</h3>
           <p class="muted">Menos adjetivos, mais processo: o que diferencia uma execução premium de “limpeza comum”.</p>
           <a class="read" href="limpeza-premium-na-pratica.html">Ler artigo</a>
         </article>
 
-        <article class="card stack post" role="listitem" aria-label="Controlo de qualidade na limpeza corporativa: o padrão invisível">
+        <article class="card stack post post-card" role="listitem" aria-label="Controlo de qualidade na limpeza corporativa: o padrão invisível">
+          <picture class="thumb">
+            <source type="image/webp" srcset="assets/post-images/padrao-invisivel-controle-de-qualidade.webp">
+            <img class="thumb" src="assets/post-images/padrao-invisivel-controle-de-qualidade.jpg" alt="Imagem do artigo" loading="lazy" decoding="async">
+          </picture>
           <div class="meta"><span>Método</span><time datetime="2026-01-17">17 jan 2026</time></div>
           <h3>Controlo de qualidade na limpeza corporativa: o padrão invisível</h3>
           <p class="muted">Como checklists, auditoria e revisão final garantem consistência sem interferir na operação.</p>
