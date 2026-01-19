@@ -820,7 +820,6 @@
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
     const slices = Array.from(document.querySelectorAll('.glass-slice .img-slot'));
-    const photos  = Array.from(document.querySelectorAll('.photo-slot::before')); // can't select pseudo; we parallax photo-slot itself lightly
 
     const photoEls = Array.from(document.querySelectorAll('.photo-slot'));
 
