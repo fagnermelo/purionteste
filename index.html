@@ -6,8 +6,8 @@
   <meta name="color-scheme" content="light dark">
   <meta name="theme-color" content="#ffffff">
 
-  <title>PURION — Corporate Cleaning</title>
-  <meta name="description" content="Purion é a interseção entre rigor técnico e estética premium. Redefinimos a limpeza corporativa como experiência.">
+  <title>Purion — Limpeza corporativa premium em Portugal</title>
+  <meta name="description" content="Limpeza corporativa premium com rigor técnico, protocolos e controlo de qualidade. Escritórios, espaços comerciais, hotelaria e alojamentos locais. Peça uma proposta à Purion.">
 
   <link rel="canonical" href="https://www.grupopurion.pt/">
   <link rel="alternate" hreflang="pt-PT" href="https://www.grupopurion.pt/">
@@ -21,9 +21,9 @@
   <link rel="alternate" type="application/rss+xml" title="Blog Purion" href="rss.xml">
   <link rel="sitemap" type="application/xml" href="sitemap.xml">
 
-  <meta property="og:title" content="PURION — Corporate Cleaning">
+  <meta property="og:title" content="Purion — Limpeza corporativa premium em Portugal">
   <meta property="og:site_name" content="Purion">
-  <meta property="og:description" content="Purion é a interseção entre rigor técnico e estética premium. Redefinimos a limpeza corporativa como experiência.">
+  <meta property="og:description" content="Limpeza corporativa premium com rigor técnico, protocolos e controlo de qualidade. Escritórios, espaços comerciais, hotelaria e alojamentos locais. Peça uma proposta à Purion.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="pt_PT">
   <meta property="og:url" content="https://www.grupopurion.pt/">
@@ -31,9 +31,12 @@
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="PURION — Corporate Cleaning">
-  <meta name="twitter:description" content="Purion é a interseção entre rigor técnico e estética premium. Redefinimos a limpeza corporativa como experiência.">
+  <meta name="twitter:title" content="Purion — Limpeza corporativa premium em Portugal">
+  <meta name="twitter:description" content="Limpeza corporativa premium com rigor técnico, protocolos e controlo de qualidade. Escritórios, espaços comerciais, hotelaria e alojamentos locais. Peça uma proposta à Purion.">
   <meta name="twitter:image" content="https://www.grupopurion.pt/og/purion-og.jpg">
+  <link rel="preload" as="font" type="font/woff2" href="fonts/NeueMontreal-Regular.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="fonts/NeueMontreal-Medium.woff2" crossorigin>
+
 
 
 
@@ -474,6 +477,7 @@
     .svc-head{display:flex; align-items:baseline; justify-content:space-between; gap:1rem}
     .svc-kicker{font-size:var(--t-15); letter-spacing:.16em; text-transform:uppercase; color:var(--muted); white-space:nowrap;}
     .svc-title{margin-top:.35rem; font-family:var(--font-title); font-size: var(--t-24); line-height: 1.22; letter-spacing:.01em;}
+    .svc-link{display:inline-block;margin-top:.55rem;font-size:var(--t-15);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);text-decoration:none;padding:.35rem .45rem;border-radius:12px;border:1px solid var(--hair);background:color-mix(in oklab, var(--bg) 88%, transparent);} .svc-link:hover{color:var(--fg)}
     .svc-desc{margin-top:.8rem; max-width:62ch}
     .svc-meta{margin-top:1.05rem; padding-top:1rem; border-top:1px solid var(--hair); display:flex; flex-wrap:wrap; gap:.55rem 1rem; color:var(--muted); font-size:var(--t-15); letter-spacing:.10em; text-transform:uppercase;}
     @media (max-width: 980px){.svc{grid-column:span 12}}
@@ -535,7 +539,10 @@
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "Organization",
+      "@type": [
+        "LocalBusiness",
+        "ProfessionalService"
+      ],
       "@id": "https://www.grupopurion.pt/#organization",
       "name": "Purion",
       "url": "https://www.grupopurion.pt/",
@@ -548,12 +555,48 @@
         {
           "@type": "ContactPoint",
           "contactType": "sales",
+          "telephone": "+35192327774",
           "email": "comercial@grupopurion.pt",
           "availableLanguage": [
             "pt-PT",
             "pt"
           ]
+        },
+        {
+          "@type": "ContactPoint",
+          "contactType": "customer service",
+          "telephone": "+351226001119",
+          "availableLanguage": [
+            "pt-PT",
+            "pt"
+          ]
+        },
+        {
+          "@type": "ContactPoint",
+          "contactType": "executive",
+          "telephone": "+351913158396",
+          "availableLanguage": [
+            "pt-PT",
+            "pt"
+          ]
         }
+      ],
+      "telephone": [
+        "+35192327774",
+        "+351913158396",
+        "+351226001119"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Rua da Alegria, 321",
+        "postalCode": "4000-050",
+        "addressLocality": "Porto",
+        "addressCountry": "PT"
+      },
+      "areaServed": [
+        "Portugal",
+        "Porto",
+        "Grande Porto"
       ]
     },
     {
@@ -569,7 +612,7 @@
       "@type": "WebPage",
       "@id": "https://www.grupopurion.pt/#webpage",
       "url": "https://www.grupopurion.pt/",
-      "name": "PURION — Corporate Cleaning",
+      "name": "Purion — Limpeza corporativa premium em Portugal",
       "isPartOf": {
         "@id": "https://www.grupopurion.pt/#website"
       },
@@ -593,7 +636,8 @@
       <li><a href="#conceito">Conceito</a></li>
       <li><a href="#pureza">Pureza</a></li>
       <li><a href="#quem">Quem somos</a></li>
-      <li><a href="#servicos">Serviços</a></li>
+      <li><a href="servicos/">Serviços</a></li>
+      <li><a href="qualidade/">Qualidade</a></li>
       <li><a href="blog/">Blog</a></li>
       <li><a href="#contactos">Contactos</a></li>
     </ul>
@@ -610,7 +654,8 @@
   <a href="#conceito" data-close>Conceito</a>
   <a href="#pureza" data-close>Pureza</a>
   <a href="#quem" data-close>Quem somos</a>
-  <a href="#servicos" data-close>Serviços</a>
+  <a href="servicos/" data-close>Serviços</a>
+  <a href="qualidade/" data-close>Qualidade</a>
   <a href="blog/" data-close>Blog</a>
   <a href="#contactos" data-close>Contactos</a>
 </aside>
@@ -620,7 +665,7 @@
     <div class="container hero-grid">
       <div class="hero-left stack">
         <h1 class="display display-xl">PURION</h1>
-        <div class="tagline">Corporate Cleaning</div>
+        <div class="tagline"><span>Corporate Cleaning</span><span class="tagline-sub">Limpeza corporativa premium</span></div>
 
         <div class="hero-cta">
           <a class="btn primary" href="#contactos">Pedir proposta</a>
@@ -827,19 +872,19 @@
             <div class="svc-head">
               <div>
                 <div class="svc-kicker">01 — Core</div>
-                <div class="svc-title">Limpeza corporativa premium</div>
+                <h3 class="svc-title">Limpeza corporativa premium</h3>
               </div>
               <div class="svc-kicker">Rotina</div>
             </div>
             <p class="svc-desc">Manutenção diária ou periódica para escritórios e espaços comerciais, com rigor técnico, organização e acabamento premium.</p>
-            <div class="svc-meta"><span>Protocolos</span><span>Discrição</span><span>Acabamento</span></div>
+            <div class="svc-meta"><span>Protocolos</span><span>Discrição</span><span>Acabamento</span><a class="svc-link" href="servicos/">Ver todos os serviços</a></div>
           </article>
 
           <article class="svc card">
             <div class="svc-head">
               <div>
                 <div class="svc-kicker">02 — Hospitality</div>
-                <div class="svc-title">Hotéis e alojamentos locais</div>
+                <h3 class="svc-title">Hotéis e alojamentos locais</h3>
               </div>
               <div class="svc-kicker">Operação</div>
             </div>
@@ -851,7 +896,7 @@
             <div class="svc-head">
               <div>
                 <div class="svc-kicker">03 — Check‑in</div>
-                <div class="svc-title">Preparação de ambientes</div>
+                <h3 class="svc-title">Preparação de ambientes</h3>
               </div>
               <div class="svc-kicker">Entrega</div>
             </div>
@@ -863,7 +908,7 @@
             <div class="svc-head">
               <div>
                 <div class="svc-kicker">04 — Eventos</div>
-                <div class="svc-title">Pré e pós‑evento</div>
+                <h3 class="svc-title">Pré e pós‑evento</h3>
               </div>
               <div class="svc-kicker">Pontual</div>
             </div>
@@ -875,7 +920,7 @@
             <div class="svc-head">
               <div>
                 <div class="svc-kicker">05 — Grande escala</div>
-                <div class="svc-title">Projetos e operações maiores</div>
+                <h3 class="svc-title">Projetos e operações maiores</h3>
               </div>
               <div class="svc-kicker">Capacidade</div>
             </div>
@@ -942,9 +987,13 @@
         </div>
 
         <div class="contact-card stack">
-          <div class="eyebrow">Canais</div>
+                    <div class="eyebrow">Canais</div>
           <div><a href="mailto:comercial@grupopurion.pt">comercial@grupopurion.pt</a></div>
-          <div><a href="https://www.grupopurion.pt/" target="_blank" rel="noopener">www.grupopurion.pt</a></div>
+          <div><a href="tel:+35192327774">Comercial: +351 923 277 74</a></div>
+          <div><a href="tel:+351913158396">CEO/Comercial: +351 913 158 396</a></div>
+          <div><a href="tel:+351226001119">Fixo: +351 226 001 119</a></div>
+          <div style="margin-top:.6rem;"><a href="https://www.grupopurion.pt/" target="_blank" rel="noopener">www.grupopurion.pt</a></div>
+          <div class="muted" style="font-size:var(--t-15);letter-spacing:.10em;text-transform:uppercase;">Rua da Alegria, 321 — 4000-050 Porto, Portugal</div>
           <div class="muted" style="font-size:var(--t-15);letter-spacing:.10em;text-transform:uppercase;">@purion.pt</div>
           <a class="btn primary" style="margin-top:1rem; width:100%;" href="mailto:comercial@grupopurion.pt?subject=Pedido%20de%20proposta%20%E2%80%94%20Purion">Pedir proposta</a>
         </div>
