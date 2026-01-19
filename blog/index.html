@@ -717,11 +717,71 @@
 
   <section aria-label="Artigos">
     <div class="container">
-      <!-- Renderização por JS para evitar “sumir” posts quando a lista ficar desatualizada -->
-      <div class="posts" id="posts" role="list" aria-live="polite"></div>
-      <noscript>
-        <p class="muted" style="margin-top:var(--gap2)">Ative JavaScript para ver a lista completa de artigos.</p>
-      </noscript>
+      <!--
+        BLOG ESTATICO (GitHub Pages / hospedagem simples)
+        Para publicar um novo post:
+          1) crie um novo arquivo .html dentro de /blog/
+          2) duplique um <article> abaixo e ajuste: href, titulo, categoria, data e resumo
+      -->
+      <div class="posts" role="list" aria-live="polite">
+
+        <article class="card stack post" role="listitem" aria-label="Turnover em hotelaria: como manter consistência sem aumentar custos">
+          <div class="meta"><span>Hotelaria</span><time datetime="2026-01-19">19 jan 2026</time></div>
+          <h3>Turnover em hotelaria: como manter consistência sem aumentar custos</h3>
+          <p class="muted">Processos, rotinas e auditoria rápida para manter padrão em equipas rotativas.</p>
+          <a class="read" href="turnover-hotelaria-consistencia.html">Ler artigo</a>
+        </article>
+
+        <article class="card stack post" role="listitem" aria-label="Produtos e materiais: o que usar (e evitar) em hotelaria e alojamento local">
+          <div class="meta"><span>Materiais</span><time datetime="2026-01-19">19 jan 2026</time></div>
+          <h3>Produtos e materiais: o que usar (e evitar) em hotelaria e alojamento local</h3>
+          <p class="muted">Como escolher produtos por superfície e evitar danos, odores fortes e marcas.</p>
+          <a class="read" href="produtos-seguros-hotelaria-al.html">Ler artigo</a>
+        </article>
+
+        <article class="card stack post" role="listitem" aria-label="Housekeeping premium: SOPs e auditoria que o hóspede não vê">
+          <div class="meta"><span>Hotelaria</span><time datetime="2026-01-19">19 jan 2026</time></div>
+          <h3>Housekeeping premium: SOPs e auditoria que o hóspede não vê</h3>
+          <p class="muted">Como criar rotinas invisíveis para o hóspede e inevitáveis para o resultado.</p>
+          <a class="read" href="housekeeping-premium-sops.html">Ler artigo</a>
+        </article>
+
+        <article class="card stack post" role="listitem" aria-label="Higienização profissional entre hóspedes: padrão de hotelaria no AL">
+          <div class="meta"><span>Alojamento Local</span><time datetime="2026-01-19">19 jan 2026</time></div>
+          <h3>Higienização profissional entre hóspedes: padrão de hotelaria no AL</h3>
+          <p class="muted">Como elevar o padrão entre reservas: ordem de trabalho, materiais e controlo final.</p>
+          <a class="read" href="higienizacao-entre-hospedes.html">Ler artigo</a>
+        </article>
+
+        <article class="card stack post" role="listitem" aria-label="Airbnb e AL: checklist de limpeza para garantir 5 estrelas">
+          <div class="meta"><span>Alojamento Local</span><time datetime="2026-01-19">19 jan 2026</time></div>
+          <h3>Airbnb e AL: checklist de limpeza para garantir 5 estrelas</h3>
+          <p class="muted">Um checklist prático (turnover) para reduzir reclamações e aumentar a consistência entre hóspedes.</p>
+          <a class="read" href="checklist-airbnb-5-estrelas.html">Ler artigo</a>
+        </article>
+
+        <article class="card stack post" role="listitem" aria-label="12 pontos de contacto que geram queixas — e como prevenir">
+          <div class="meta"><span>Alojamento Local</span><time datetime="2026-01-19">19 jan 2026</time></div>
+          <h3>12 pontos de contacto que geram queixas — e como prevenir</h3>
+          <p class="muted">Onde as reclamações de limpeza nascem (quase sempre): pontos de contacto. Um guia prático para reduzir queixas e elevar avaliações.</p>
+          <a class="read" href="pontos-de-contacto-queixas-limpeza.html">Ler artigo</a>
+        </article>
+
+        <article class="card stack post" role="listitem" aria-label="Limpeza premium na prática: o que muda (de verdade)">
+          <div class="meta"><span>Execução</span><time datetime="2026-01-18">18 jan 2026</time></div>
+          <h3>Limpeza premium na prática: o que muda (de verdade)</h3>
+          <p class="muted">Menos adjetivos, mais processo: o que diferencia uma execução premium de “limpeza comum”.</p>
+          <a class="read" href="limpeza-premium-na-pratica.html">Ler artigo</a>
+        </article>
+
+        <article class="card stack post" role="listitem" aria-label="Controlo de qualidade na limpeza corporativa: o padrão invisível">
+          <div class="meta"><span>Método</span><time datetime="2026-01-17">17 jan 2026</time></div>
+          <h3>Controlo de qualidade na limpeza corporativa: o padrão invisível</h3>
+          <p class="muted">Como checklists, auditoria e revisão final garantem consistência sem interferir na operação.</p>
+          <a class="read" href="padrao-invisivel-controle-de-qualidade.html">Ler artigo</a>
+        </article>
+
+      </div>
     </div>
   </section>
 
@@ -788,102 +848,12 @@
     });
   })();
   </script>
-
-  <script>
-  // Lista de artigos (blog estático). Para adicionar novo post:
-  // 1) crie um novo .html em /blog/
-  // 2) adicione um novo item aqui (no topo, se for o mais recente)
-  (() => {
-    const posts = [
-      {
-        title: 'Turnover em hotelaria: como manter consistência sem aumentar custos',
-        excerpt: 'Processos, rotinas e auditoria rápida para manter padrão em equipas rotativas.',
-        category: 'Hotelaria',
-        date: '2026-01-19',
-        href: 'turnover-hotelaria-consistencia.html'
-      },
-      {
-        title: 'Produtos e materiais: o que usar (e evitar) em hotelaria e alojamento local',
-        excerpt: 'Como escolher produtos por superfície e evitar danos, odores fortes e marcas.',
-        category: 'Materiais',
-        date: '2026-01-19',
-        href: 'produtos-seguros-hotelaria-al.html'
-      },
-      {
-        title: 'Housekeeping premium: SOPs e auditoria que o hóspede não vê',
-        excerpt: 'Como criar rotinas invisíveis para o hóspede e inevitáveis para o resultado.',
-        category: 'Hotelaria',
-        date: '2026-01-19',
-        href: 'housekeeping-premium-sops.html'
-      },
-      {
-        title: 'Higienização profissional entre hóspedes: padrão de hotelaria no AL',
-        excerpt: 'Como elevar o padrão entre reservas: ordem de trabalho, materiais e controlo final.',
-        category: 'Alojamento Local',
-        date: '2026-01-19',
-        href: 'higienizacao-entre-hospedes.html'
-      },
-      {
-        title: 'Airbnb e AL: checklist de limpeza para garantir 5 estrelas',
-        excerpt: 'Um checklist prático (turnover) para reduzir reclamações e aumentar a consistência entre hóspedes.',
-        category: 'Alojamento Local',
-        date: '2026-01-19',
-        href: 'checklist-airbnb-5-estrelas.html'
-      },
-      {
-        title: '12 pontos de contacto que geram queixas — e como prevenir',
-        excerpt: 'Onde as reclamações de limpeza nascem (quase sempre): pontos de contacto. Um guia prático para reduzir queixas e elevar avaliações.',
-        category: 'Alojamento Local',
-        date: '2026-01-19',
-        href: 'pontos-de-contacto-queixas-limpeza.html'
-      },
-      {
-        title: 'Limpeza premium na prática: o que muda (de verdade)',
-        excerpt: 'Menos adjetivos, mais processo: o que diferencia uma execução premium de “limpeza comum”.',
-        category: 'Execução',
-        date: '2026-01-18',
-        href: 'limpeza-premium-na-pratica.html'
-      },
-      {
-        title: 'Controlo de qualidade na limpeza corporativa: o padrão invisível',
-        excerpt: 'Como checklists, auditoria e revisão final garantem consistência sem interferir na operação.',
-        category: 'Método',
-        date: '2026-01-17',
-        href: 'padrao-invisivel-controle-de-qualidade.html'
-      }
-    ];
-
-    const mount = document.getElementById('posts');
-    if (!mount) return;
-
-    mount.innerHTML = posts.map(p => {
-      const safeTitle = String(p.title || '').replace(/</g,'&lt;').replace(/>/g,'&gt;');
-      const safeExcerpt = String(p.excerpt || '').replace(/</g,'&lt;').replace(/>/g,'&gt;');
-      const safeCat = String(p.category || '').replace(/</g,'&lt;').replace(/>/g,'&gt;');
-      const safeDate = String(p.date || '');
-      const safeHref = String(p.href || '#').replace(/"/g,'');
-      return `
-        <article class="card stack post" aria-label="${safeTitle}">
-          <div class="meta"><span>${safeCat}</span><time datetime="${safeDate}">${safeDate}</time></div>
-          <h3>${safeTitle}</h3>
-          <p class="muted">${safeExcerpt}</p>
-          <a class="read" href="${safeHref}">Ler artigo</a>
-        </article>
-      `;
-    }).join('');
-  })();
-  </script>
-
-  
-
 <script>
 // Parallax “real” (suave) — funciona em desktop e mobile (iOS incluído)
   (() => {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
     const slices = Array.from(document.querySelectorAll('.glass-slice .img-slot'));
-    const photos  = Array.from(document.querySelectorAll('.photo-slot::before')); // can't select pseudo; we parallax photo-slot itself lightly
-
     const photoEls = Array.from(document.querySelectorAll('.photo-slot'));
 
     const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
