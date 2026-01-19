@@ -361,49 +361,14 @@
     }
     /* blue solid placeholder "where image will go" */
     .glass-slice .img-slot{
-      position:absolute; inset:0;
+      position:absolute; inset:-40% 0 -40% 0;
+      --focusY: 50%;
       background: linear-gradient(140deg, var(--blue), var(--blue2));
     }
 
     /* glass ribbon layers */
-    .glass-slice .ribbon{
-      position:absolute;
-      inset:-18% -10% -18% -10%;
-      pointer-events:none;
-      filter: saturate(1.08) contrast(1.05);
-      opacity:.92;
-      transform: rotate(-6deg);
-    }
-    .glass-slice .ribbon::before,
-    .glass-slice .ribbon::after{
-      content:"";
-      position:absolute; inset:0;
-      background:
-        radial-gradient(70% 50% at 20% 30%, rgba(255,255,255,.60), transparent 55%),
-        radial-gradient(70% 60% at 80% 40%, rgba(170,220,255,.55), transparent 58%),
-        radial-gradient(70% 60% at 55% 70%, rgba(210,160,255,.35), transparent 60%),
-        linear-gradient(90deg, rgba(255,255,255,.18), rgba(255,255,255,.02), rgba(255,255,255,.16));
-      mix-blend-mode: screen;
-      opacity:.85;
-    }
-    .glass-slice .ribbon::after{
-      background:
-        linear-gradient(180deg, rgba(255,255,255,.18), rgba(255,255,255,0)),
-        radial-gradient(50% 70% at 60% 30%, rgba(255,255,255,.45), transparent 60%);
-      mix-blend-mode: overlay;
-      opacity:.55;
-      transform: translate3d(0,0,0) scale(1.02);
-      filter: blur(0.2px);
-    }
-    .glass-slice .edge{
-      position:absolute; inset:0;
-      background:
-        linear-gradient(180deg,
-          color-mix(in oklab, var(--bg) 90%, transparent) 0%,
-          transparent 42%,
-          color-mix(in oklab, var(--bg) 94%, transparent) 100%);
-      pointer-events:none;
-    }
+    .glass-slice .ribbon{display:none !important;}
+    .glass-slice .edge{display:none !important;}
     .glass-slice .content{
       position:relative; z-index:2;
       padding: clamp(1.4rem, 3vw, 2.35rem) 0;
@@ -426,13 +391,23 @@
     }
     @media (max-width: 980px){.glass-slice .row{flex-direction:column; align-items:flex-start} .glass-slice .sub{color:rgba(255,255,255,.84)}}
 
-    /* Parallax suave (desktop) */
-    @media (min-width: 1100px){
-      .glass-slice .img-slot{background-attachment: fixed;}
-    }
-    @media (prefers-reduced-motion: reduce){
-      .glass-slice .img-slot{background-attachment: scroll !important;}
-    }
+    /* Parallax: usamos JavaScript (mais consistente e compatível em mobile). */
+
+    /* Imagem limpa: sem filtros/overlays por cima */
+    .glass-slice .ribbon, .glass-slice .edge{display:none !important;}
+
+    /* Imagem limpa: sem filtros/overlays por cima */
+    .glass-slice .ribbon, .glass-slice .edge{display:none !important;}
+
+    /* Imagem limpa: sem filtros/overlays por cima */
+    .glass-slice .ribbon, .glass-slice .edge{display:none !important;}
+
+    /* Imagem limpa: sem filtros/overlays por cima */
+    .glass-slice .ribbon, .glass-slice .edge{display:none !important;}
+
+    /* Imagem do artigo sem filtros/overlays (parallax precisa de imagem limpa) */
+    .glass-slice .ribbon, .glass-slice .edge{display:none !important;}
+
 
     /* Cards */
     .card,.svc,.contact-card,.frame{position:relative; overflow:hidden; background: color-mix(in oklab, var(--bg) 98%, transparent);}
@@ -473,7 +448,7 @@
       letter-spacing:.18em;
       text-transform:uppercase;
       color:rgba(255,255,255,.86);
-      opacity:.85;
+      opacity:.38;
     }
 
     /* Services grid */
@@ -509,25 +484,25 @@
       /* pattern visível */
       background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%27800%27%20height%3D%27800%27%20viewBox%3D%270%200%20800%20800%27%3E%0A%3Cdefs%3E%0A%20%20%3ClinearGradient%20id%3D%27g%27%20x1%3D%270%27%20y1%3D%270%27%20x2%3D%271%27%20y2%3D%271%27%3E%0A%20%20%20%20%3Cstop%20offset%3D%270%27%20stop-color%3D%27%230A2F8F%27%20stop-opacity%3D%271%27/%3E%0A%20%20%20%20%3Cstop%20offset%3D%271%27%20stop-color%3D%27%230B4FE6%27%20stop-opacity%3D%271%27/%3E%0A%20%20%3C/linearGradient%3E%0A%20%20%3Cpattern%20id%3D%27p%27%20width%3D%2780%27%20height%3D%2780%27%20patternUnits%3D%27userSpaceOnUse%27%3E%0A%20%20%20%20%3Cpath%20d%3D%27M80%200H0V80%27%20fill%3D%27none%27%20stroke%3D%27rgba%28255%2C255%2C255%2C0.10%29%27%20stroke-width%3D%271%27/%3E%0A%20%20%20%20%3Cpath%20d%3D%27M0%200L80%2080%27%20fill%3D%27none%27%20stroke%3D%27rgba%28255%2C255%2C255%2C0.08%29%27%20stroke-width%3D%271%27/%3E%0A%20%20%20%20%3Cpath%20d%3D%27M0%2080L80%200%27%20fill%3D%27none%27%20stroke%3D%27rgba%28255%2C255%2C255%2C0.04%29%27%20stroke-width%3D%271%27/%3E%0A%20%20%3C/pattern%3E%0A%20%20%3CradialGradient%20id%3D%27r%27%20cx%3D%2730%25%27%20cy%3D%2725%25%27%20r%3D%2765%25%27%3E%0A%20%20%20%20%3Cstop%20offset%3D%270%27%20stop-color%3D%27rgba%28255%2C255%2C255%2C0.35%29%27/%3E%0A%20%20%20%20%3Cstop%20offset%3D%270.55%27%20stop-color%3D%27rgba%28255%2C255%2C255%2C0.06%29%27/%3E%0A%20%20%20%20%3Cstop%20offset%3D%271%27%20stop-color%3D%27rgba%28255%2C255%2C255%2C0%29%27/%3E%0A%20%20%3C/radialGradient%3E%0A%3C/defs%3E%0A%3Crect%20width%3D%27800%27%20height%3D%27800%27%20fill%3D%27url%28%23g%29%27/%3E%0A%3Crect%20width%3D%27800%27%20height%3D%27800%27%20fill%3D%27url%28%23p%29%27/%3E%0A%3Crect%20width%3D%27800%27%20height%3D%27800%27%20fill%3D%27url%28%23r%29%27/%3E%0A%3C/svg%3E");
       background-size: cover;
-      background-position: center;
+      background-position: 50% var(--focusY, 50%);
     }
 
     /* Layer para parallax via JS (funciona também em iOS) */
     .glass-slice .img-slot{
-      transform: translate3d(0,0,0) scale(1.10);
+      transform: translate3d(0,0,0) scale(1.12);
       will-change: transform;
     }
     .photo-slot{
       background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%27800%27%20height%3D%27800%27%20viewBox%3D%270%200%20800%20800%27%3E%0A%3Cdefs%3E%0A%20%20%3ClinearGradient%20id%3D%27g%27%20x1%3D%270%27%20y1%3D%270%27%20x2%3D%271%27%20y2%3D%271%27%3E%0A%20%20%20%20%3Cstop%20offset%3D%270%27%20stop-color%3D%27%230A2F8F%27%20stop-opacity%3D%271%27/%3E%0A%20%20%20%20%3Cstop%20offset%3D%271%27%20stop-color%3D%27%230B4FE6%27%20stop-opacity%3D%271%27/%3E%0A%20%20%3C/linearGradient%3E%0A%20%20%3Cpattern%20id%3D%27p%27%20width%3D%2780%27%20height%3D%2780%27%20patternUnits%3D%27userSpaceOnUse%27%3E%0A%20%20%20%20%3Cpath%20d%3D%27M80%200H0V80%27%20fill%3D%27none%27%20stroke%3D%27rgba%28255%2C255%2C255%2C0.10%29%27%20stroke-width%3D%271%27/%3E%0A%20%20%20%20%3Cpath%20d%3D%27M0%200L80%2080%27%20fill%3D%27none%27%20stroke%3D%27rgba%28255%2C255%2C255%2C0.08%29%27%20stroke-width%3D%271%27/%3E%0A%20%20%20%20%3Cpath%20d%3D%27M0%2080L80%200%27%20fill%3D%27none%27%20stroke%3D%27rgba%28255%2C255%2C255%2C0.04%29%27%20stroke-width%3D%271%27/%3E%0A%20%20%3C/pattern%3E%0A%20%20%3CradialGradient%20id%3D%27r%27%20cx%3D%2730%25%27%20cy%3D%2725%25%27%20r%3D%2765%25%27%3E%0A%20%20%20%20%3Cstop%20offset%3D%270%27%20stop-color%3D%27rgba%28255%2C255%2C255%2C0.35%29%27/%3E%0A%20%20%20%20%3Cstop%20offset%3D%270.55%27%20stop-color%3D%27rgba%28255%2C255%2C255%2C0.06%29%27/%3E%0A%20%20%20%20%3Cstop%20offset%3D%271%27%20stop-color%3D%27rgba%28255%2C255%2C255%2C0%29%27/%3E%0A%20%20%3C/radialGradient%3E%0A%3C/defs%3E%0A%3Crect%20width%3D%27800%27%20height%3D%27800%27%20fill%3D%27url%28%23g%29%27/%3E%0A%3Crect%20width%3D%27800%27%20height%3D%27800%27%20fill%3D%27url%28%23p%29%27/%3E%0A%3Crect%20width%3D%27800%27%20height%3D%27800%27%20fill%3D%27url%28%23r%29%27/%3E%0A%3C/svg%3E");
       background-size: cover;
-      background-position: center;
+      background-position: 50% var(--focusY, 50%);
     }
     .photo-slot::before{
       content:"";
       position:absolute; inset:-12%;
       background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%27800%27%20height%3D%27800%27%20viewBox%3D%270%200%20800%20800%27%3E%0A%3Cdefs%3E%0A%20%20%3ClinearGradient%20id%3D%27g%27%20x1%3D%270%27%20y1%3D%270%27%20x2%3D%271%27%20y2%3D%271%27%3E%0A%20%20%20%20%3Cstop%20offset%3D%270%27%20stop-color%3D%27%230A2F8F%27%20stop-opacity%3D%271%27/%3E%0A%20%20%20%20%3Cstop%20offset%3D%271%27%20stop-color%3D%27%230B4FE6%27%20stop-opacity%3D%271%27/%3E%0A%20%20%3C/linearGradient%3E%0A%20%20%3Cpattern%20id%3D%27p%27%20width%3D%2780%27%20height%3D%2780%27%20patternUnits%3D%27userSpaceOnUse%27%3E%0A%20%20%20%20%3Cpath%20d%3D%27M80%200H0V80%27%20fill%3D%27none%27%20stroke%3D%27rgba%28255%2C255%2C255%2C0.10%29%27%20stroke-width%3D%271%27/%3E%0A%20%20%20%20%3Cpath%20d%3D%27M0%200L80%2080%27%20fill%3D%27none%27%20stroke%3D%27rgba%28255%2C255%2C255%2C0.08%29%27%20stroke-width%3D%271%27/%3E%0A%20%20%20%20%3Cpath%20d%3D%27M0%2080L80%200%27%20fill%3D%27none%27%20stroke%3D%27rgba%28255%2C255%2C255%2C0.04%29%27%20stroke-width%3D%271%27/%3E%0A%20%20%3C/pattern%3E%0A%20%20%3CradialGradient%20id%3D%27r%27%20cx%3D%2730%25%27%20cy%3D%2725%25%27%20r%3D%2765%25%27%3E%0A%20%20%20%20%3Cstop%20offset%3D%270%27%20stop-color%3D%27rgba%28255%2C255%2C255%2C0.35%29%27/%3E%0A%20%20%20%20%3Cstop%20offset%3D%270.55%27%20stop-color%3D%27rgba%28255%2C255%2C255%2C0.06%29%27/%3E%0A%20%20%20%20%3Cstop%20offset%3D%271%27%20stop-color%3D%27rgba%28255%2C255%2C255%2C0%29%27/%3E%0A%20%20%3C/radialGradient%3E%0A%3C/defs%3E%0A%3Crect%20width%3D%27800%27%20height%3D%27800%27%20fill%3D%27url%28%23g%29%27/%3E%0A%3Crect%20width%3D%27800%27%20height%3D%27800%27%20fill%3D%27url%28%23p%29%27/%3E%0A%3Crect%20width%3D%27800%27%20height%3D%27800%27%20fill%3D%27url%28%23r%29%27/%3E%0A%3C/svg%3E");
       background-size: cover;
-      background-position:center;
+      background-position: 50% var(--focusY, 50%);
       transform: translate3d(0,0,0) scale(1.08);
       opacity:.55;
       mix-blend-mode: screen;
@@ -733,7 +708,7 @@
   
   <section class="glass-slice" aria-label="Transição — Artigo">
     <div class="wrap">
-      <div class="img-slot" aria-hidden="true" style="background-image:url('assets/post-images/housekeeping-premium-sops.jpg'); background-image:image-set(url('assets/post-images/housekeeping-premium-sops.webp') type('image/webp'), url('assets/post-images/housekeeping-premium-sops.jpg') type('image/jpeg')); background-size:cover; background-position:center;"></div>
+      <div class="img-slot" aria-hidden="true" style="--focusY: 50%; background-image:url('assets/post-images/housekeeping-premium-sops.jpg'); background-image:image-set(url('assets/post-images/housekeeping-premium-sops.webp') type('image/webp'), url('assets/post-images/housekeeping-premium-sops.jpg') type('image/jpeg')); background-size:cover; background-position: 50% var(--focusY, 50%);"></div>
       <div class="ribbon" aria-hidden="true"></div>
       <div class="edge" aria-hidden="true"></div>
 
@@ -869,46 +844,60 @@
   
 
 <script>
-// Parallax “real” (suave) — funciona em desktop e mobile (iOS incluído)
-  (() => {
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+// Parallax (visível, premium e consistente) — move a própria camada da imagem.
+(() => {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-    const slices = Array.from(document.querySelectorAll('.glass-slice .img-slot'));
+  const slices = Array.from(document.querySelectorAll('.glass-slice .img-slot'));
+  const photos  = Array.from(document.querySelectorAll('.photo-slot'));
 
-    const photoEls = Array.from(document.querySelectorAll('.photo-slot'));
+  const clamp = (v,a,b) => Math.max(a, Math.min(b, v));
+  const SLICE_PX = 170;  // mais forte e vis�vel  // mais perceptível (ainda premium)
+  const PHOTO_PX = 32;
 
-    const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+  // Preparação: melhora performance e evita “bordas” ao mover
+  slices.forEach(el => {
+    el.style.willChange = 'transform';
+    el.style.transform = 'translate3d(0,0,0) scale(1.26)';
+  });
+  photos.forEach(el => {
+    el.style.willChange = 'background-position';
+  });
 
-    let ticking = false;
-    const onScroll = () => {
-      if (ticking) return;
-      ticking = true;
-      requestAnimationFrame(() => {
-        const vh = window.innerHeight || 800;
-        // Glass slices: stronger parallax
-        slices.forEach(el => {
-          const r = el.getBoundingClientRect();
-          const p = 1 - clamp((r.top + r.height/2) / vh, 0, 2); // rough progress
-          const y = (p - 0.5) * 42; // px
-          el.style.transform = `translate3d(0, ${y.toFixed(1)}px, 0) scale(1.10)`;
-        });
+  let ticking = false;
+  const update = () => {
+    const vh = window.innerHeight || 800;
 
-        // Photo slots: subtle parallax on the block itself
-        photoEls.forEach(el => {
-          const r = el.getBoundingClientRect();
-          const p = 1 - clamp((r.top + r.height/2) / vh, 0, 2);
-          const y = (p - 0.5) * 22;
-          el.style.backgroundPosition = `50% calc(50% + ${y.toFixed(1)}px)`;
-        });
+    slices.forEach(el => {
+      const r = el.getBoundingClientRect();
+      const center = r.top + r.height / 2;
+      const t = clamp(center / vh, 0, 1);
+      // t=0 topo, t=1 fundo; invertendo para efeito natural
+      const y = (0.5 - t) * SLICE_PX;
+      el.style.transform = `translate3d(0, ${y.toFixed(1)}px, 0) scale(1.26)`;
+    });
 
-        ticking = false;
-      });
-    };
+    photos.forEach(el => {
+      const r = el.getBoundingClientRect();
+      const center = r.top + r.height / 2;
+      const t = clamp(center / vh, 0, 1);
+      const y = (t - 0.5) * PHOTO_PX;
+      el.style.backgroundPosition = `50% calc(50% + ${y.toFixed(1)}px)`;
+    });
 
-    window.addEventListener('scroll', onScroll, { passive: true });
-    window.addEventListener('resize', onScroll);
-    onScroll();
-  })();
+    ticking = false;
+  };
+
+  const onScroll = () => {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(update);
+  };
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
+  onScroll();
+})();
 </script>
 </body>
 </html>

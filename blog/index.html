@@ -420,13 +420,7 @@
     }
     @media (max-width: 980px){.glass-slice .row{flex-direction:column; align-items:flex-start} .glass-slice .sub{color:rgba(255,255,255,.84)}}
 
-    /* Parallax suave (desktop) */
-    @media (min-width: 1100px){
-      .glass-slice .img-slot{background-attachment: fixed;}
-    }
-    @media (prefers-reduced-motion: reduce){
-      .glass-slice .img-slot{background-attachment: scroll !important;}
-    }
+    /* Parallax: usamos JavaScript (mais consistente e compatível em mobile). */
 
     /* Cards */
     .card,.svc,.contact-card,.frame{position:relative; overflow:hidden; background: color-mix(in oklab, var(--bg) 98%, transparent);}
@@ -503,25 +497,25 @@
       /* pattern visível */
       background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%27800%27%20height%3D%27800%27%20viewBox%3D%270%200%20800%20800%27%3E%0A%3Cdefs%3E%0A%20%20%3ClinearGradient%20id%3D%27g%27%20x1%3D%270%27%20y1%3D%270%27%20x2%3D%271%27%20y2%3D%271%27%3E%0A%20%20%20%20%3Cstop%20offset%3D%270%27%20stop-color%3D%27%230A2F8F%27%20stop-opacity%3D%271%27/%3E%0A%20%20%20%20%3Cstop%20offset%3D%271%27%20stop-color%3D%27%230B4FE6%27%20stop-opacity%3D%271%27/%3E%0A%20%20%3C/linearGradient%3E%0A%20%20%3Cpattern%20id%3D%27p%27%20width%3D%2780%27%20height%3D%2780%27%20patternUnits%3D%27userSpaceOnUse%27%3E%0A%20%20%20%20%3Cpath%20d%3D%27M80%200H0V80%27%20fill%3D%27none%27%20stroke%3D%27rgba%28255%2C255%2C255%2C0.10%29%27%20stroke-width%3D%271%27/%3E%0A%20%20%20%20%3Cpath%20d%3D%27M0%200L80%2080%27%20fill%3D%27none%27%20stroke%3D%27rgba%28255%2C255%2C255%2C0.08%29%27%20stroke-width%3D%271%27/%3E%0A%20%20%20%20%3Cpath%20d%3D%27M0%2080L80%200%27%20fill%3D%27none%27%20stroke%3D%27rgba%28255%2C255%2C255%2C0.04%29%27%20stroke-width%3D%271%27/%3E%0A%20%20%3C/pattern%3E%0A%20%20%3CradialGradient%20id%3D%27r%27%20cx%3D%2730%25%27%20cy%3D%2725%25%27%20r%3D%2765%25%27%3E%0A%20%20%20%20%3Cstop%20offset%3D%270%27%20stop-color%3D%27rgba%28255%2C255%2C255%2C0.35%29%27/%3E%0A%20%20%20%20%3Cstop%20offset%3D%270.55%27%20stop-color%3D%27rgba%28255%2C255%2C255%2C0.06%29%27/%3E%0A%20%20%20%20%3Cstop%20offset%3D%271%27%20stop-color%3D%27rgba%28255%2C255%2C255%2C0%29%27/%3E%0A%20%20%3C/radialGradient%3E%0A%3C/defs%3E%0A%3Crect%20width%3D%27800%27%20height%3D%27800%27%20fill%3D%27url%28%23g%29%27/%3E%0A%3Crect%20width%3D%27800%27%20height%3D%27800%27%20fill%3D%27url%28%23p%29%27/%3E%0A%3Crect%20width%3D%27800%27%20height%3D%27800%27%20fill%3D%27url%28%23r%29%27/%3E%0A%3C/svg%3E");
       background-size: cover;
-      background-position: center;
+      background-position: 50% var(--focusY, 50%);
     }
 
     /* Layer para parallax via JS (funciona também em iOS) */
     .glass-slice .img-slot{
-      transform: translate3d(0,0,0) scale(1.10);
+      transform: translate3d(0,0,0) scale(1.06);
       will-change: transform;
     }
     .photo-slot{
       background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%27800%27%20height%3D%27800%27%20viewBox%3D%270%200%20800%20800%27%3E%0A%3Cdefs%3E%0A%20%20%3ClinearGradient%20id%3D%27g%27%20x1%3D%270%27%20y1%3D%270%27%20x2%3D%271%27%20y2%3D%271%27%3E%0A%20%20%20%20%3Cstop%20offset%3D%270%27%20stop-color%3D%27%230A2F8F%27%20stop-opacity%3D%271%27/%3E%0A%20%20%20%20%3Cstop%20offset%3D%271%27%20stop-color%3D%27%230B4FE6%27%20stop-opacity%3D%271%27/%3E%0A%20%20%3C/linearGradient%3E%0A%20%20%3Cpattern%20id%3D%27p%27%20width%3D%2780%27%20height%3D%2780%27%20patternUnits%3D%27userSpaceOnUse%27%3E%0A%20%20%20%20%3Cpath%20d%3D%27M80%200H0V80%27%20fill%3D%27none%27%20stroke%3D%27rgba%28255%2C255%2C255%2C0.10%29%27%20stroke-width%3D%271%27/%3E%0A%20%20%20%20%3Cpath%20d%3D%27M0%200L80%2080%27%20fill%3D%27none%27%20stroke%3D%27rgba%28255%2C255%2C255%2C0.08%29%27%20stroke-width%3D%271%27/%3E%0A%20%20%20%20%3Cpath%20d%3D%27M0%2080L80%200%27%20fill%3D%27none%27%20stroke%3D%27rgba%28255%2C255%2C255%2C0.04%29%27%20stroke-width%3D%271%27/%3E%0A%20%20%3C/pattern%3E%0A%20%20%3CradialGradient%20id%3D%27r%27%20cx%3D%2730%25%27%20cy%3D%2725%25%27%20r%3D%2765%25%27%3E%0A%20%20%20%20%3Cstop%20offset%3D%270%27%20stop-color%3D%27rgba%28255%2C255%2C255%2C0.35%29%27/%3E%0A%20%20%20%20%3Cstop%20offset%3D%270.55%27%20stop-color%3D%27rgba%28255%2C255%2C255%2C0.06%29%27/%3E%0A%20%20%20%20%3Cstop%20offset%3D%271%27%20stop-color%3D%27rgba%28255%2C255%2C255%2C0%29%27/%3E%0A%20%20%3C/radialGradient%3E%0A%3C/defs%3E%0A%3Crect%20width%3D%27800%27%20height%3D%27800%27%20fill%3D%27url%28%23g%29%27/%3E%0A%3Crect%20width%3D%27800%27%20height%3D%27800%27%20fill%3D%27url%28%23p%29%27/%3E%0A%3Crect%20width%3D%27800%27%20height%3D%27800%27%20fill%3D%27url%28%23r%29%27/%3E%0A%3C/svg%3E");
       background-size: cover;
-      background-position: center;
+      background-position: 50% var(--focusY, 50%);
     }
     .photo-slot::before{
       content:"";
       position:absolute; inset:-12%;
       background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%27800%27%20height%3D%27800%27%20viewBox%3D%270%200%20800%20800%27%3E%0A%3Cdefs%3E%0A%20%20%3ClinearGradient%20id%3D%27g%27%20x1%3D%270%27%20y1%3D%270%27%20x2%3D%271%27%20y2%3D%271%27%3E%0A%20%20%20%20%3Cstop%20offset%3D%270%27%20stop-color%3D%27%230A2F8F%27%20stop-opacity%3D%271%27/%3E%0A%20%20%20%20%3Cstop%20offset%3D%271%27%20stop-color%3D%27%230B4FE6%27%20stop-opacity%3D%271%27/%3E%0A%20%20%3C/linearGradient%3E%0A%20%20%3Cpattern%20id%3D%27p%27%20width%3D%2780%27%20height%3D%2780%27%20patternUnits%3D%27userSpaceOnUse%27%3E%0A%20%20%20%20%3Cpath%20d%3D%27M80%200H0V80%27%20fill%3D%27none%27%20stroke%3D%27rgba%28255%2C255%2C255%2C0.10%29%27%20stroke-width%3D%271%27/%3E%0A%20%20%20%20%3Cpath%20d%3D%27M0%200L80%2080%27%20fill%3D%27none%27%20stroke%3D%27rgba%28255%2C255%2C255%2C0.08%29%27%20stroke-width%3D%271%27/%3E%0A%20%20%20%20%3Cpath%20d%3D%27M0%2080L80%200%27%20fill%3D%27none%27%20stroke%3D%27rgba%28255%2C255%2C255%2C0.04%29%27%20stroke-width%3D%271%27/%3E%0A%20%20%3C/pattern%3E%0A%20%20%3CradialGradient%20id%3D%27r%27%20cx%3D%2730%25%27%20cy%3D%2725%25%27%20r%3D%2765%25%27%3E%0A%20%20%20%20%3Cstop%20offset%3D%270%27%20stop-color%3D%27rgba%28255%2C255%2C255%2C0.35%29%27/%3E%0A%20%20%20%20%3Cstop%20offset%3D%270.55%27%20stop-color%3D%27rgba%28255%2C255%2C255%2C0.06%29%27/%3E%0A%20%20%20%20%3Cstop%20offset%3D%271%27%20stop-color%3D%27rgba%28255%2C255%2C255%2C0%29%27/%3E%0A%20%20%3C/radialGradient%3E%0A%3C/defs%3E%0A%3Crect%20width%3D%27800%27%20height%3D%27800%27%20fill%3D%27url%28%23g%29%27/%3E%0A%3Crect%20width%3D%27800%27%20height%3D%27800%27%20fill%3D%27url%28%23p%29%27/%3E%0A%3Crect%20width%3D%27800%27%20height%3D%27800%27%20fill%3D%27url%28%23r%29%27/%3E%0A%3C/svg%3E");
       background-size: cover;
-      background-position:center;
+      background-position: 50% var(--focusY, 50%);
       transform: translate3d(0,0,0) scale(1.08);
       opacity:.55;
       mix-blend-mode: screen;
@@ -539,6 +533,8 @@
   
     .post-card .thumb{width:100%; aspect-ratio:16/9; object-fit:cover; border-radius:var(--r2); border:1px solid var(--hair);}
     .post-card h3{margin-top:.2rem}
+    .post-card .title-link{color:inherit; text-decoration:none; display:block; cursor:pointer; position:relative; z-index:2;}
+    .post-card .title-link:hover{text-decoration:underline; text-underline-offset:.2em;}
 </style>
 
   <script type="application/ld+json">
@@ -738,7 +734,7 @@
             <img class="thumb" src="assets/post-images/turnover-hotelaria-consistencia.jpg" alt="Lobby de hotel com carrinhos de bagagem — turnover e consistência operacional" loading="lazy" decoding="async">
           </picture>
           <div class="meta"><span>Hotelaria</span><time datetime="2026-01-19">19 jan 2026</time></div>
-          <h3>Turnover em hotelaria: como manter consistência sem aumentar custos</h3>
+          <h3><a class="title-link" href="turnover-hotelaria-consistencia.html">Turnover em hotelaria: como manter consistência sem aumentar custos</a></h3>
           <p class="muted">Processos, rotinas e auditoria rápida para manter padrão em equipas rotativas.</p>
           <a class="read" href="turnover-hotelaria-consistencia.html">Ler artigo</a>
         </article>
@@ -749,7 +745,7 @@
             <img class="thumb" src="assets/post-images/produtos-seguros-hotelaria-al.jpg" alt="Frasco pulverizador e esponjas sobre bancada — produtos e materiais para hotelaria" loading="lazy" decoding="async">
           </picture>
           <div class="meta"><span>Materiais</span><time datetime="2026-01-19">19 jan 2026</time></div>
-          <h3>Produtos e materiais: o que usar (e evitar) em hotelaria e alojamento local</h3>
+          <h3><a class="title-link" href="produtos-seguros-hotelaria-al.html">Produtos e materiais: o que usar (e evitar) em hotelaria e alojamento local</a></h3>
           <p class="muted">Como escolher produtos por superfície e evitar danos, odores fortes e marcas.</p>
           <a class="read" href="produtos-seguros-hotelaria-al.html">Ler artigo</a>
         </article>
@@ -760,7 +756,7 @@
             <img class="thumb" src="assets/post-images/housekeeping-premium-sops.jpg" alt="Profissional a preparar cama — housekeeping premium, SOPs e auditoria" loading="lazy" decoding="async">
           </picture>
           <div class="meta"><span>Hotelaria</span><time datetime="2026-01-19">19 jan 2026</time></div>
-          <h3>Housekeeping premium: SOPs e auditoria que o hóspede não vê</h3>
+          <h3><a class="title-link" href="housekeeping-premium-sops.html">Housekeeping premium: SOPs e auditoria que o hóspede não vê</a></h3>
           <p class="muted">Como criar rotinas invisíveis para o hóspede e inevitáveis para o resultado.</p>
           <a class="read" href="housekeeping-premium-sops.html">Ler artigo</a>
         </article>
@@ -771,7 +767,7 @@
             <img class="thumb" src="assets/post-images/higienizacao-entre-hospedes.jpg" alt="Close-up de ajuste de roupa de cama — higienização entre hóspedes" loading="lazy" decoding="async">
           </picture>
           <div class="meta"><span>Alojamento Local</span><time datetime="2026-01-19">19 jan 2026</time></div>
-          <h3>Higienização profissional entre hóspedes: padrão de hotelaria no AL</h3>
+          <h3><a class="title-link" href="higienizacao-entre-hospedes.html">Higienização profissional entre hóspedes: padrão de hotelaria no AL</a></h3>
           <p class="muted">Como elevar o padrão entre reservas: ordem de trabalho, materiais e controlo final.</p>
           <a class="read" href="higienizacao-entre-hospedes.html">Ler artigo</a>
         </article>
@@ -782,7 +778,7 @@
             <img class="thumb" src="assets/post-images/checklist-airbnb-5-estrelas.jpg" alt="Apartamento luminoso e organizado — checklist de limpeza para Airbnb e AL" loading="lazy" decoding="async">
           </picture>
           <div class="meta"><span>Alojamento Local</span><time datetime="2026-01-19">19 jan 2026</time></div>
-          <h3>Airbnb e AL: checklist de limpeza para garantir 5 estrelas</h3>
+          <h3><a class="title-link" href="checklist-airbnb-5-estrelas.html">Airbnb e AL: checklist de limpeza para garantir 5 estrelas</a></h3>
           <p class="muted">Um checklist prático (turnover) para reduzir reclamações e aumentar a consistência entre hóspedes.</p>
           <a class="read" href="checklist-airbnb-5-estrelas.html">Ler artigo</a>
         </article>
@@ -793,7 +789,7 @@
             <img class="thumb" src="assets/post-images/pontos-de-contacto-queixas-limpeza.jpg" alt="Maçaneta de porta — pontos de contacto críticos que geram queixas" loading="lazy" decoding="async">
           </picture>
           <div class="meta"><span>Alojamento Local</span><time datetime="2026-01-19">19 jan 2026</time></div>
-          <h3>12 pontos de contacto que geram queixas — e como prevenir</h3>
+          <h3><a class="title-link" href="pontos-de-contacto-queixas-limpeza.html">12 pontos de contacto que geram queixas — e como prevenir</a></h3>
           <p class="muted">Onde as reclamações de limpeza nascem (quase sempre): pontos de contacto. Um guia prático para reduzir queixas e elevar avaliações.</p>
           <a class="read" href="pontos-de-contacto-queixas-limpeza.html">Ler artigo</a>
         </article>
@@ -804,7 +800,7 @@
             <img class="thumb" src="assets/post-images/limpeza-premium-na-pratica.jpg" alt="Toalhas dobradas em cama de hotel — limpeza premium na prática" loading="lazy" decoding="async">
           </picture>
           <div class="meta"><span>Execução</span><time datetime="2026-01-18">18 jan 2026</time></div>
-          <h3>Limpeza premium na prática: o que muda (de verdade)</h3>
+          <h3><a class="title-link" href="limpeza-premium-na-pratica.html">Limpeza premium na prática: o que muda (de verdade)</a></h3>
           <p class="muted">Menos adjetivos, mais processo: o que diferencia uma execução premium de “limpeza comum”.</p>
           <a class="read" href="limpeza-premium-na-pratica.html">Ler artigo</a>
         </article>
@@ -815,7 +811,7 @@
             <img class="thumb" src="assets/post-images/padrao-invisivel-controle-de-qualidade.jpg" alt="Equipa com tablet de verificação — controlo de qualidade na limpeza corporativa" loading="lazy" decoding="async">
           </picture>
           <div class="meta"><span>Método</span><time datetime="2026-01-17">17 jan 2026</time></div>
-          <h3>Controlo de qualidade na limpeza corporativa: o padrão invisível</h3>
+          <h3><a class="title-link" href="padrao-invisivel-controle-de-qualidade.html">Controlo de qualidade na limpeza corporativa: o padrão invisível</a></h3>
           <p class="muted">Como checklists, auditoria e revisão final garantem consistência sem interferir na operação.</p>
           <a class="read" href="padrao-invisivel-controle-de-qualidade.html">Ler artigo</a>
         </article>
@@ -888,7 +884,9 @@
   })();
   </script>
 <script>
-// Parallax “real” (suave) — funciona em desktop e mobile (iOS incluído)
+// Parallax “real” (suave) — consistente em desktop e mobile.
+// Nota: usamos background-position (em vez de translate) para garantir que o efeito é visível
+// mesmo quando o elemento é absolute + overflow hidden.
   (() => {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
@@ -896,6 +894,14 @@
     const photoEls = Array.from(document.querySelectorAll('.photo-slot'));
 
     const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+    const SLICE_PX = 26;  // intensidade (premium/sutil)
+    const PHOTO_PX = 10;
+
+    // Mantém escala fixa para criar “profundidade”, e desloca o background.
+    slices.forEach(el => {
+      el.style.transform = 'translate3d(0,0,0) scale(1.06)';
+      el.style.willChange = 'background-position, transform';
+    });
 
     let ticking = false;
     const onScroll = () => {
@@ -903,19 +909,20 @@
       ticking = true;
       requestAnimationFrame(() => {
         const vh = window.innerHeight || 800;
-        // Glass slices: stronger parallax
+
         slices.forEach(el => {
           const r = el.getBoundingClientRect();
-          const p = 1 - clamp((r.top + r.height/2) / vh, 0, 2); // rough progress
-          const y = (p - 0.5) * 42; // px
-          el.style.transform = `translate3d(0, ${y.toFixed(1)}px, 0) scale(1.10)`;
+          const center = r.top + r.height / 2;
+          const t = clamp(center / vh, 0, 1);
+          const y = (t - 0.5) * SLICE_PX;
+          el.style.backgroundPosition = `50% calc(50% + ${y.toFixed(1)}px)`;
         });
 
-        // Photo slots: subtle parallax on the block itself
         photoEls.forEach(el => {
           const r = el.getBoundingClientRect();
-          const p = 1 - clamp((r.top + r.height/2) / vh, 0, 2);
-          const y = (p - 0.5) * 22;
+          const center = r.top + r.height / 2;
+          const t = clamp(center / vh, 0, 1);
+          const y = (t - 0.5) * PHOTO_PX;
           el.style.backgroundPosition = `50% calc(50% + ${y.toFixed(1)}px)`;
         });
 

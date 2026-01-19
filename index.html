@@ -228,7 +228,7 @@
     p{margin:0; letter-spacing:-.005em}
     .lede{font-size:var(--lede); line-height:1.55; letter-spacing:-.012em; max-width:64ch;}
     .eyebrow{font-family:var(--font-body); font-size:var(--t-15); letter-spacing:.18em; text-transform:uppercase; color:var(--muted);}
-    .tagline{font-family:var(--font-title); letter-spacing:.14em; text-transform:uppercase; font-size:var(--t-15); color:var(--muted); margin-top:.35rem;}
+    .tagline{font-family:var(--font-title); letter-spacing:.14em; text-transform:uppercase; font-size:var(--t-15); color:var(--muted); margin-top:.35rem; display:flex; flex-direction:column; gap:.15rem;}
     .caption{font-size:var(--t-15); letter-spacing:.14em; text-transform:uppercase; color:var(--muted);}
     .display{font-family:var(--font-title); letter-spacing:-.04em; line-height:.90;}
     .display-xl{font-size:var(--t-225);}
@@ -509,7 +509,7 @@
 
     /* Layer para parallax via JS (funciona também em iOS) */
     .glass-slice .img-slot{
-      transform: translate3d(0,0,0) scale(1.10);
+      transform: translate3d(0,0,0) scale(1.06);
       will-change: transform;
     }
     .photo-slot{
@@ -665,7 +665,7 @@
     <div class="container hero-grid">
       <div class="hero-left stack">
         <h1 class="display display-xl">PURION</h1>
-        <div class="tagline"><span>Corporate Cleaning</span><span class="tagline-sub">Limpeza corporativa premium</span></div>
+        <div class="tagline"><span>Corporate Cleaning</span> <span class="tagline-sub">Limpeza corporativa premium</span></div>
 
         <div class="hero-cta">
           <a class="btn primary" href="#contactos">Pedir proposta</a>
@@ -1088,15 +1088,15 @@
         slices.forEach(el => {
           const r = el.getBoundingClientRect();
           const p = 1 - clamp((r.top + r.height/2) / vh, 0, 2); // rough progress
-          const y = (p - 0.5) * 42; // px
-          el.style.transform = `translate3d(0, ${y.toFixed(1)}px, 0) scale(1.10)`;
+          const y = (p - 0.5) * 26; // px
+          el.style.transform = `translate3d(0, ${y.toFixed(1)}px, 0) scale(1.06)`;
         });
 
         // Photo slots: subtle parallax on the block itself
         photoEls.forEach(el => {
           const r = el.getBoundingClientRect();
           const p = 1 - clamp((r.top + r.height/2) / vh, 0, 2);
-          const y = (p - 0.5) * 22;
+          const y = (p - 0.5) * 10;
           el.style.backgroundPosition = `50% calc(50% + ${y.toFixed(1)}px)`;
         });
 

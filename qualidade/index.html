@@ -512,7 +512,7 @@
 
     /* Layer para parallax via JS (funciona também em iOS) */
     .glass-slice .img-slot{
-      transform: translate3d(0,0,0) scale(1.10);
+      transform: translate3d(0,0,0) scale(1.06);
       will-change: transform;
     }
     .photo-slot{
@@ -835,15 +835,15 @@
         slices.forEach(el => {
           const r = el.getBoundingClientRect();
           const p = 1 - clamp((r.top + r.height/2) / vh, 0, 2); // rough progress
-          const y = (p - 0.5) * 42; // px
-          el.style.transform = `translate3d(0, ${y.toFixed(1)}px, 0) scale(1.10)`;
+          const y = (p - 0.5) * 26; // px
+          el.style.transform = `translate3d(0, ${y.toFixed(1)}px, 0) scale(1.06)`;
         });
 
         // Photo slots: subtle parallax on the block itself
         photoEls.forEach(el => {
           const r = el.getBoundingClientRect();
           const p = 1 - clamp((r.top + r.height/2) / vh, 0, 2);
-          const y = (p - 0.5) * 22;
+          const y = (p - 0.5) * 10;
           el.style.backgroundPosition = `50% calc(50% + ${y.toFixed(1)}px)`;
         });
 
