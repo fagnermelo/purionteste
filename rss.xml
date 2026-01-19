@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+<channel>
+  <title>Blog Purion</title>
+  <link>https://www.grupopurion.pt/blog/</link>
+  <description>Método, execução e controlo de qualidade em limpeza corporativa premium.</description>
+  <language>pt-PT</language>
+  <item>
+    <title>O padrão invisível: controlo de qualidade em limpeza corporativa</title>
+    <link>https://www.grupopurion.pt/blog/padrao-invisivel-controle-de-qualidade.html</link>
+    <guid>https://www.grupopurion.pt/blog/padrao-invisivel-controle-de-qualidade.html</guid>
+    <pubDate>Fri, 16 Jan 2026 00:00:00 +0000</pubDate>
+    <description>Como checklists, supervisão e métricas mantêm consistência sem interferir na operação.</description>
+  </item>
+  <item>
+    <title>Limpeza premium na prática: o que muda (de verdade)</title>
+    <link>https://www.grupopurion.pt/blog/limpeza-premium-na-pratica.html</link>
+    <guid>https://www.grupopurion.pt/blog/limpeza-premium-na-pratica.html</guid>
+    <pubDate>Fri, 16 Jan 2026 00:00:00 +0000</pubDate>
+    <description>Menos adjetivos, mais processo: o que diferencia execução premium de “limpeza comum”.</description>
+  </item>
+</channel>
+</rss>
